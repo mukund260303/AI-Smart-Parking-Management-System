@@ -1,151 +1,191 @@
-# ParkEase | Real-time Parking Detection and Reservation
+# 🚗 AI Smart Parking Management System
 
-This repository contains the implementation of a **Real-time Parking Detection and Reservation System** using **YOLOv8**, **Flask**, **MongoDB**, and various hardware integrations. The system provides users with real-time parking slot detection and a seamless reservation experience.
+An AI-powered Smart Parking Management System built using **Flask, MongoDB, YOLOv8, OpenCV, and Arduino Integration**. The system enables users to reserve parking slots online while allowing administrators to monitor parking occupancy using computer vision and IoT sensors.
 
-## Features
+---
 
-- **Real-time Parking Detection**: Utilizes the YOLOv8 object detection model for identifying available parking spots.
-- **User Authentication**: Secure user signup and login functionality.
-- **Admin Dashboard**: Manage parking spaces and monitor bookings.
-- **Parking Slot Booking**: Users can book slots and get a unique ticket.
-- **Database Integration**: MongoDB stores user, admin, and parking slot information.
-- **Responsive Web Interface**: Frontend developed with HTML and CSS.
+## ✨ Features
 
-## Tech Stack
+- 🔐 User Registration & Login
+- 🚗 Online Parking Slot Reservation
+- 🤖 AI-Based Vehicle Detection using YOLOv8
+- 🎥 Real-Time Video Processing with OpenCV
+- 📊 Live Parking Availability Dashboard
+- 👨‍💼 Admin Dashboard
+- 💰 Parking Price Calculator
+- 🗄️ MongoDB Database Integration
+- 📡 Arduino Sensor Integration
+- 📱 Responsive Web Interface
 
-- **Backend**: Flask
-- **Frontend**: HTML, CSS
-- **Database**: MongoDB
-- **Machine Learning Model**: YOLOv8
-- **Hardware Integration**: Arduino for sensor data input
+---
 
-## Project Structure
+## 🛠 Tech Stack
 
+| Category | Technologies |
+|----------|--------------|
+| Frontend | HTML5, CSS3, JavaScript, Jinja2 |
+| Backend | Python, Flask |
+| Database | MongoDB, PyMongo |
+| Authentication | Flask-Login, bcrypt |
+| AI & Computer Vision | YOLOv8, OpenCV |
+| Hardware | Arduino, PySerial |
+| Deployment | Gunicorn, Render |
+
+---
+
+## 🏗️ System Workflow
+
+```text
+User
+   │
+   ▼
+Flask Web Application
+   │
+   ▼
+MongoDB Database
+   ▲
+   │
+OpenCV + YOLOv8
+   │
+Arduino Sensors
+   │
+   ▼
+Real-Time Parking Status
 ```
-Real-time-Parking-Detection-and-Reservation/
-├── app.py                # Main Flask application
-├── templates/             # HTML templates
-├── static/                # CSS and JavaScript files
-├── models/                # YOLOv8 model files
-├── database/              # MongoDB collection configurations
-└── README.md              # Project documentation (this file)
+
+---
+
+## 📂 Project Structure
+
+```text
+AI-Smart-Parking-Management-System/
+│── app.py
+│── db.py
+│── users.py
+│── training.py
+│── requirements.txt
+│── models/
+│── templates/
+│── static/
+│── screenshots/
+│── README.md
 ```
 
-## Setup Instructions
+---
 
-### Prerequisites
+## ⚙️ Installation
 
-- Python 3.x
-- MongoDB
-- YOLOv8 installed via `ultralytics`
-- Arduino setup for hardware integration (optional)
+Clone the repository
 
-### Installation
+```bash
+git clone https://github.com/mukund260303/AI-Smart-Parking-Management-System.git
+cd AI-Smart-Parking-Management-System
+```
 
-1. Clone the repository:
+Create Virtual Environment
 
-   ```bash
-   git clone https://github.com/Piyushseth55/Real-time-Parking-Detection-and-Reservation.git
-   cd Real-time-Parking-Detection-and-Reservation
-   ```
+```bash
+python -m venv venv
+```
 
-2. Create and activate a virtual environment:
+Windows
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # On Windows: venv\Scripts\activate
-   ```
+```bash
+venv\Scripts\activate
+```
 
-3. Install dependencies:
+Install Dependencies
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-4. Start MongoDB locally or connect to a cloud instance.
+Initialize MongoDB
 
-5. Run the Flask application:
+```bash
+python init_parking.py
+```
 
-   ```bash
-   python app.py
-   ```
+Run the project
 
-### Model Setup
+```bash
+python app.py
+```
 
-Place your trained YOLOv8 model (`best.pt`) in the `models/` directory.
+Open
 
-### Hardware Integration
+```text
+http://localhost:5000
+```
 
-Connect your Arduino to the PC and ensure appropriate sensor connections for real-time updates.
+---
 
-## Usage
-
-1. Navigate to `http://localhost:5000` in your browser.
-2. Sign up or log in.
-3. Book a parking slot and receive a unique ticket.
-4. Admins can manage parking slots and view bookings from the admin dashboard.
-
-## Screenshots
-
-### Login
-![Login](screenshots/loginpage_2.png)
+## 📸 Screenshots
 
 ### Landing Page
-![Signup](screenshots/loginpage.png)
 
-### Admin Login
-![Admin Login](screenshots/admiin_login.png)
+![Landing](screenshots/loginpage.png)
 
-### Userdashboard
-![Userdashboard](screenshots/userdashboard.png)
+### Login
 
-### Price Calculator
-![Price Calculator](screenshots/price_calculator.png)
+![Login](screenshots/loginpage_2.png)
+
+### User Dashboard
+
+![Dashboard](screenshots/userdashboard.png)
 
 ### Booking Page
-![Booking Page](screenshots/booking_page.png)
 
-### Booking Form
-![Booking Form](screenshots/Booking_form.png)
-
-### Booking Details
-![Booking Details](screenshots/booking_details.png)
+![Booking](screenshots/booking_page.png)
 
 ### Payment Page
-![Payment Page](screenshots/Payment_page.png)
+
+![Payment](screenshots/Payment_page.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/admin_page_1.png)
 
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin_page_2.png)
+![Admin](screenshots/admin_page_1.png)
 
-## Future Improvements
+---
 
-- Integration with payment gateways
-- Real-time sensor data visualization
-- Multi-location parking management
+## 🚀 Future Enhancements
 
-## Contributions
+- Automatic Number Plate Recognition (ANPR)
+- QR Code Based Entry
+- Email Notifications
+- UPI Payment Gateway
+- Parking Analytics Dashboard
+- Mobile Application
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+---
 
-- Fork the repository.
-- Create a new branch (git checkout -b feature/YourFeatureName).
-- Commit your changes (git commit -m 'Add some feature').
-- Push to the branch (git push origin feature/YourFeatureName).
-- Open a pull request.
+## 📖 What I Learned
 
-## License
+- Flask Web Development
+- MongoDB Integration
+- User Authentication
+- OpenCV Image Processing
+- YOLOv8 Object Detection
+- Arduino Serial Communication
+- Git & GitHub
+- Full-Stack Project Deployment
 
-This project is licensed under the MIT License.
+---
 
-## Contact
+## 👨‍💻 About This Repository
 
-Piyush Kumar Seth\
-[GitHub Profile](https://github.com/Piyushseth55)
+This repository is maintained for learning, experimentation, and demonstrating the integration of **Flask, MongoDB, OpenCV, YOLOv8, and Arduino** in a smart parking management application. I have configured, deployed, studied, and documented the project while continuing to enhance it with additional features and improvements.
 
-### Team Members
-- Piyush Kumar Seth
-- [Akshit Gaur](#)
-- [Madhuril Bhaskar](#)
+---
+
+## 👤 Developer
+
+**Balmukund Patidar**
+
+🎓 MCA Student | NIT Raipur
+
+🔗 GitHub: https://github.com/mukund260303
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
