@@ -1,27 +1,9 @@
-################################################################################
-#               Real-Time parking detecttion and reservation                   #                  
-#                                                                              #
-#                         Data Preprocessing                                   #
-#                                                                              #
-################################################################################
-
-
-
-
-
-################################################################################
-#    Loading Libraries        
-################################################################################
-
 import socket
 from flask import Flask, render_template, redirect, url_for, request, flash, Response
 import flask
 from flask_login import LoginManager, login_manager
 import flask_login
 from flask_login.utils import login_required, login_user, logout_user
-from matplotlib.style import available
-from requests import session
-from sympy import total_degree
 from werkzeug.security import check_password_hash
 from db import get_booking_collection, get_filled_collection, save_user, get_user, get_admin,store_booking,get_total_parking_spaces, booking_to_filled, remove_from_filled, get_booked_filled_spaces, get_parking,is_car_already_booked,isAvailable, alreadyexist
 from pymongo.errors import DuplicateKeyError
